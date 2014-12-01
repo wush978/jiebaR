@@ -33,9 +33,10 @@
 #' @author Qin Wenfeng <\url{http://qinwenfeng.com}>
 #' @export
 `<=.qseg`<-function(qseg, code){
-  if(!exists("quick_worker",envir = .GlobalEnv ,inherits = F)){
+  if(!exists("quick_worker",envir = .GlobalEnv ,inherits = F) || 
+       .GlobalEnv$quick_worker$PrivateVarible$timestamp != TIMESTAMP){
     
-    if(exists("qseg",envir = .GlobalEnv,inherits = FALSE )) 
+    if(exists("qseg",envir = .GlobalEnv,inherits = FALSE ) ) 
       rm("qseg",envir = .GlobalEnv)
     
     modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
@@ -49,7 +50,7 @@
     
     createquickworker(quickparam)
     setactive()
-  }
+  } 
   if("segment" %in% class(.GlobalEnv$quick_worker)){
     
     if(file.exists(code) && .GlobalEnv$quick_worker$write == T) {
@@ -61,7 +62,7 @@
     
   } else if("tagger" %in% class(.GlobalEnv$quick_worker)){
     
-    tag(code,.GlobalEnv$quick_worker)
+    tagging(code,.GlobalEnv$quick_worker)
     
   } else if("keywords" %in% class(.GlobalEnv$quick_worker)){
     
@@ -104,8 +105,8 @@ setactive<-function(){
         
         modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
         quickparam = readRDS(modelpath)
-        quickparam$type = v
-        saveRDS(quickparam,modelpath)
+        quickparam$type = v[1]
+        try(saveRDS(quickparam,modelpath))
         
         if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
         if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -126,11 +127,11 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker$PrivateVarible
     else {
-      
+      stopifnot(is.character(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$dict = v
-      saveRDS(quickparam,modelpath)
+      quickparam$dict = v[1]
+      try(saveRDS(quickparam,modelpath))
       
       if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
       if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -151,10 +152,11 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker$PrivateVarible
     else {
+      stopifnot(is.character(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$hmm = v
-      saveRDS(quickparam,modelpath)
+      quickparam$hmm = v[1]
+      try(saveRDS(quickparam,modelpath))
       
       if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
       if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -175,10 +177,11 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker$PrivateVarible
     else {
+      stopifnot(is.character(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$stop_word = v
-      saveRDS(quickparam,modelpath)
+      quickparam$stop_word = v[1]
+      try(saveRDS(quickparam,modelpath))
       
       if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
       if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -199,10 +202,11 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker$PrivateVarible
     else {
+      stopifnot(is.character(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$user = v
-      saveRDS(quickparam,modelpath)
+      quickparam$user = v[1]
+      try(saveRDS(quickparam,modelpath))
       
       if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
       if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -223,10 +227,11 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker$PrivateVarible
     else {
+      stopifnot(is.character(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$idf = v
-      saveRDS(quickparam,modelpath)
+      quickparam$idf = v[1]
+      try(saveRDS(quickparam,modelpath))
       
       if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
       if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -247,10 +252,11 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker
     else {
+      stopifnot(is.numeric(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$qmax = v
-      saveRDS(quickparam,modelpath)
+      quickparam$qmax = v[1]
+      try(saveRDS(quickparam,modelpath))
       
       if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
       if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -271,10 +277,11 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker
     else {
+      stopifnot(is.numeric(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$topn = v
-      saveRDS(quickparam,modelpath)
+      quickparam$topn = v[1]
+      try(saveRDS(quickparam,modelpath))
       
       if(quickparam$dict == "AUTO") quickparam$dict = DICTPATH
       if(quickparam$hmm == "AUTO") quickparam$hmm = HMMPATH
@@ -298,10 +305,10 @@ setactive<-function(){
       stopifnot(is.logical(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$write = v
-      saveRDS(quickparam,modelpath)
-      .GlobalEnv$quick_worker$write = v
-      cat("Reset default topn, new worker:\n")
+      quickparam$write = v[1]
+      try(saveRDS(quickparam,modelpath))
+      .GlobalEnv$quick_worker$write = v[1]
+      cat("Reset default write, new worker:\n")
       print(.GlobalEnv$quick_worker)
     }
     
@@ -316,10 +323,10 @@ setactive<-function(){
       stopifnot(is.logical(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$detect = v
-      saveRDS(quickparam,modelpath)
-      .GlobalEnv$quick_worker$detect = v
-      cat("new worker:\n")
+      quickparam$detect = v[1]
+      try(saveRDS(quickparam,modelpath))
+      .GlobalEnv$quick_worker$detect = v[1]
+      cat("Reset default detect, new worker:\n")
       print(.GlobalEnv$quick_worker)
     }
     
@@ -331,14 +338,15 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker$encoding
     else {
+      stopifnot(is.character(v))
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       
       quickparam = readRDS(modelpath)
-      quickparam$detect = v
-      saveRDS(quickparam,modelpath)
+      quickparam$encoding = v[1]
+      try(saveRDS(quickparam,modelpath))
       
-      .GlobalEnv$quick_worker$encoding = v
-      cat("new worker:\n")
+      .GlobalEnv$quick_worker$encoding = v[1]
+      cat("Reset default encoding, new worker:\n")
       print(.GlobalEnv$quick_worker)
     }
     
@@ -354,11 +362,11 @@ setactive<-function(){
       
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$symbol = v
-      saveRDS(quickparam,modelpath)
+      quickparam$symbol = v[1]
+      try(saveRDS(quickparam,modelpath))
       
-      .GlobalEnv$quick_worker$symbol = v
-      cat("new worker:\n")
+      .GlobalEnv$quick_worker$symbol = v[1]
+      cat("Reset default symbol, new worker:\n")
       print(.GlobalEnv$quick_worker)
     }
     
@@ -374,11 +382,11 @@ setactive<-function(){
       
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$symbol = v
-      saveRDS(quickparam,modelpath)
+      quickparam$lines = v[1]
+      try(saveRDS(quickparam,modelpath))
       
-      .GlobalEnv$quick_worker$lines = v
-      cat("new worker:\n")
+      .GlobalEnv$quick_worker$lines = v[1]
+      cat("Reset default lines, new worker:\n")
       print(.GlobalEnv$quick_worker)
     }
     
@@ -390,15 +398,15 @@ setactive<-function(){
     if (missing(v))
       .GlobalEnv$quick_worker$output
     else {
-      stopifnot(is.character(v))
+      stopifnot(is.character(v)||is.null(v))
       
       modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
       quickparam = readRDS(modelpath)
-      quickparam$symbol = v
-      saveRDS(quickparam,modelpath)
+      quickparam$output = v[1]
+      try(saveRDS(quickparam,modelpath))
       
-      .GlobalEnv$quick_worker$lines = v
-      cat("new worker:\n")
+      .GlobalEnv$quick_worker$lines = v[1]
+      cat("Reset default output, new worker:\n")
       print(.GlobalEnv$quick_worker)
     }
     
@@ -449,7 +457,7 @@ set_qsegmodel<-function(qsegmodel){
                           "output")
   )
   modelpath  = file.path(find.package("jiebaR"),"dict","model.rda")
-  saveRDS(qsegmodel,modelpath)
+  try(saveRDS(qsegmodel,modelpath))
 }
 
 #' @rdname set_qsegmodel
