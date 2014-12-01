@@ -2,16 +2,19 @@
 \docType{data}
 \name{<=.qseg}
 \alias{<=.qseg}
+\alias{[.qseg}
 \alias{qseg}
 \title{Quick mode symbol}
 \format{qseg an environment}
 \usage{
 \method{<=}{qseg}(qseg, code)
 
+\method{[}{qseg}(qseg, code)
+
 qseg
 }
 \arguments{
-\item{qseg}{a qseg object.}
+\item{qseg}{a qseg object}
 
 \item{code}{a string}
 }

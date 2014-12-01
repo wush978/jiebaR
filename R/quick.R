@@ -26,7 +26,7 @@
 #' get_qsegmodel()
 #' }
 #' 
-#' @param qseg a qseg object.
+#' @param qseg a qseg object
 #' @param code a string
 #' 
 #' @seealso \code{\link{set_qsegmodel}} \code{\link{worker}} 
@@ -74,6 +74,10 @@
     
   }
 }
+
+#' @rdname less-than-equals-.qseg
+#' @export
+`[.qseg`<- `<=.qseg`
 
 #' @rdname less-than-equals-.qseg
 #' @export
