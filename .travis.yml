@@ -15,6 +15,10 @@ env:
   matrix:
     - _R_CHECK_CRAN_INCOMING_=FALSE
     - R_BUILD_ARGS=" " R_CHECK_ARGS="--as-cran" BOOTSTRAP_LATEX="1" _R_CHECK_CRAN_INCOMING_=TRUE BOOTSTRAP_PANDOC="1"
+<<<<<<< HEAD
+=======
+    - BOOTSTRAP_UBSAN=TRUE
+>>>>>>> master
 
 
 before_install:
