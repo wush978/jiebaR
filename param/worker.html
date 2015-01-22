@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="4.1" data-basepath=".." data-revision="1421904267006">
+    <div class="book" data-level="4.1" data-basepath=".." data-revision="1421934727558">
     
 
 <div class="book-summary">
@@ -491,6 +491,51 @@
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_52">
+                    
+                        <h2 id="worker">worker()</h2>
+<p><code>worker()</code> 用于新建分词引擎，可以同时新建多个分词引擎。引擎的类型有： mix（混合模型）, mp（最大概率模型）, hmm（HMM模型）, query（索引模型）, tag（标记模型）, simhash（Simhash 模型）和 keywords（关键词模型），共7种。</p>
+<h2 id="">默认参数</h2>
+<pre><code class="lang-r">worker(type = <span class="hljs-string">"mix"</span>, dict = DICTPATH, hmm = HMMPATH, user = USERPATH,
+  idf = IDFPATH, stop_word = STOPPATH, write = <span class="hljs-literal">T</span>, qmax = <span class="hljs-number">20</span>, topn = <span class="hljs-number">5</span>,
+  encoding = <span class="hljs-string">"UTF-8"</span>, detect = <span class="hljs-literal">T</span>, symbol = <span class="hljs-literal">F</span>, lines = <span class="hljs-number">1e+05</span>,
+  output = <span class="hljs-literal">NULL</span>, bylines = <span class="hljs-literal">F</span>)
+</code></pre>
+<h2 id="">参数说明</h2>
+<h4 id="type-">type 引擎类型</h4>
+<p>引擎的类型有： mix（混合模型）, mp（最大概率模型）, hmm（HMM模型）, query（索引模型）, tag（标记模型）, simhash（Simhash 模型）和 keywords（关键词模型），共7种。</p>
+<h4 id="dict-">dict 系统词典</h4>
+<p>优先载入的词典，包括词、词频、词性标记三列。可以输入自定义路径。</p>
+<h4 id="hmm-hmm">hmm HMM模型路径</h4>
+<p>HMM模型路径</p>
+<h4 id="user-">user 用户词典</h4>
+<p>用户词典，包括词、词性标记两列。用户词典中的所有词的词频均为系统词典中的最大词频。可以输入自定义路径。</p>
+<h4 id="idf-idf">idf IDF词典</h4>
+<p>IDF 词典，关键词提取使用。</p>
+<h4 id="stop_word-">stop_word 关键词用停止词库</h4>
+<p>关键词提取使用的停止词库。</p>
+<h4 id="write-">write 写入文件</h4>
+<p>是否将文件分词结果写入文件，默认为否。</p>
+<h4 id="qmax-">qmax 最大索引长度</h4>
+<p>索引模型中，最大可能成词的字符数。</p>
+<h4 id="topn-">topn 关键词数</h4>
+<p>提取的关键词数。</p>
+<h4 id="encoding-">encoding 输入文件编码</h4>
+<p>输入文件的编码，默认为UTF-8。</p>
+<h4 id="detect-">detect 检测编码</h4>
+<p>是否检查输入文件的编码，默认检查。</p>
+<h4 id="symbol-">symbol 保留符号</h4>
+<p>是否保留符号，默认不保留符号。</p>
+<h4 id="lines-">lines 读取行数</h4>
+<p>每次读取文件的最大行数，用于控制读取文件的长度。对于大文件，实现分次读取。</p>
+<h4 id="output-">output 输出路径</h4>
+<p>指定输出路径，一个字符串路径。</p>
+<h4 id="bylines-">bylines 按行输出</h4>
+<p>文件结果是否按行输出，如果是，则将读入的文件或字符串向量按行逐个进行分词操作。</p>
+
+                    
+                    </section>
                 
                 
                 </div>
