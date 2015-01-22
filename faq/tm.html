@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="6.1" data-basepath=".." data-revision="1421904010568">
+    <div class="book" data-level="6.1" data-basepath=".." data-revision="1421904267006">
     
 
 <div class="book-summary">
@@ -490,21 +490,21 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_50">
+                    <section class="normal" id="section-gitbook_10">
                     
                         <h3 id="-tm-">为什么 <code>tm</code> 包里词都连起来了？</h3>
 <p>不是分词包的问题，tm包可能对中文支持不太好，直接输入中文就会有这样子的情况，应该只在 Windows （各种编码问题….）上会有，Linux下没有这个问题。</p>
 <pre><code class="lang-r"><span class="hljs-keyword">library</span>(tm)
 
 xx&lt;-c(
-“进入”, “一个”, “平衡”, “时代”, “现在”, “是”, “住宅”, “价格上涨”,
-“太快”, “政府”, “采用”, “政策”, “方式”, “调控”, “这些”, “资金”,
-“就”, “有”, “往”, “商业地产”, “走”, “的”, “趋势”, “因为”, “商业地产”,
-“把”, “自己”, “划分”, “到”, “这”, “一类”, “去”, “从”, “职业”,
-“来说”, “我”, “可能”, “是”, “设计师”, “医生”, “老师”, “记者”,
-“那”, “我”, “就”, “做”, “一个”, “好”, “的”, “记者”, “好”, “的”,
-“医生”, “这是”, “社会”, “上”, “需要”, “的”, “现在”, “这个”, “时代”,
-“确实”, “是”, “一个”, “特别”, “好”, “的”, “时代”, “也”, “是”)
+<span class="hljs-string">"进入"</span>, <span class="hljs-string">"一个"</span>, <span class="hljs-string">"平衡"</span>, <span class="hljs-string">"时代"</span>, <span class="hljs-string">"现在"</span>, <span class="hljs-string">"是"</span>, <span class="hljs-string">"住宅"</span>, <span class="hljs-string">"价格上涨"</span>,
+<span class="hljs-string">"太快"</span>, <span class="hljs-string">"政府"</span>, <span class="hljs-string">"采用"</span>, <span class="hljs-string">"政策"</span>, <span class="hljs-string">"方式"</span>, <span class="hljs-string">"调控"</span>, <span class="hljs-string">"这些"</span>, <span class="hljs-string">"资金"</span>,
+<span class="hljs-string">"就"</span>, <span class="hljs-string">"有"</span>, <span class="hljs-string">"往"</span>, <span class="hljs-string">"商业地产"</span>, <span class="hljs-string">"走"</span>, <span class="hljs-string">"的"</span>, <span class="hljs-string">"趋势"</span>, <span class="hljs-string">"因为"</span>, <span class="hljs-string">"商业地产"</span>,
+<span class="hljs-string">"把"</span>, <span class="hljs-string">"自己"</span>, <span class="hljs-string">"划分"</span>, <span class="hljs-string">"到"</span>, <span class="hljs-string">"这"</span>, <span class="hljs-string">"一类"</span>, <span class="hljs-string">"去"</span>, <span class="hljs-string">"从"</span>, <span class="hljs-string">"职业"</span>,
+<span class="hljs-string">"来说"</span>, <span class="hljs-string">"我"</span>, <span class="hljs-string">"可能"</span>, <span class="hljs-string">"是"</span>, <span class="hljs-string">"设计师"</span>, <span class="hljs-string">"医生"</span>, <span class="hljs-string">"老师"</span>, <span class="hljs-string">"记者"</span>,
+<span class="hljs-string">"那"</span>, <span class="hljs-string">"我"</span>, <span class="hljs-string">"就"</span>, <span class="hljs-string">"做"</span>, <span class="hljs-string">"一个"</span>, <span class="hljs-string">"好"</span>, <span class="hljs-string">"的"</span>, <span class="hljs-string">"记者"</span>, <span class="hljs-string">"好"</span>, <span class="hljs-string">"的"</span>,
+<span class="hljs-string">"医生"</span>, <span class="hljs-string">"这是"</span>, <span class="hljs-string">"社会"</span>, <span class="hljs-string">"上"</span>, <span class="hljs-string">"需要"</span>, <span class="hljs-string">"的"</span>, <span class="hljs-string">"现在"</span>, <span class="hljs-string">"这个"</span>, <span class="hljs-string">"时代"</span>,
+<span class="hljs-string">"确实"</span>, <span class="hljs-string">"是"</span>, <span class="hljs-string">"一个"</span>, <span class="hljs-string">"特别"</span>, <span class="hljs-string">"好"</span>, <span class="hljs-string">"的"</span>, <span class="hljs-string">"时代"</span>, <span class="hljs-string">"也"</span>, <span class="hljs-string">"是"</span>)
 
 corpus = Corpus(VectorSource(xx))
 dtm_psy = TermDocumentMatrix(corpus)
