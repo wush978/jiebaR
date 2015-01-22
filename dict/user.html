@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>用户词典 | jiebaR 中文分词</title>
+        <title>用户词典 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.2" data-basepath=".." data-revision="1421899968404">
+    <div class="book" data-level="3.3" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -189,15 +189,31 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="quick/simhash.html">
+        <li class="chapter " data-level="2.4" data-path="quick/sim.html">
             
                 
-                    <a href="../quick/simhash.html">
+                    <a href="../quick/sim.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.4.</b>
                         
-                         Simhash 计算
+                         Simhash计算
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+            
+                
+                    <a href="../quick/quick_mode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         快速模式
                     </a>
                 
             
@@ -227,13 +243,29 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.1" data-path="dict/init.html">
+            
+                
+                    <a href="../dict/init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         词典设置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="../dict/dict.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>3.2.</b>
                         
                          系统词典
                     </a>
@@ -243,13 +275,13 @@
         </li>
     
         
-        <li class="chapter active" data-level="3.2" data-path="dict/user.html">
+        <li class="chapter active" data-level="3.3" data-path="dict/user.html">
             
                 
                     <a href="../dict/user.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                          用户词典
                     </a>
@@ -259,13 +291,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="dict/others.html">
+        <li class="chapter " data-level="3.4" data-path="dict/others.html">
             
                 
                     <a href="../dict/others.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                          其他词典
                     </a>
@@ -346,6 +378,28 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+            
+                
+                    <a href="../faq/tm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         关于tm包
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -430,13 +484,28 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >jiebaR 中文分词</a>
+        <a href="../" >jiebaR 中文分词  </a>
     </h1>
 </div>
 
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_48">
+                    
+                        <h2 id="">用户词典</h2>
+<p>可以自定义用户词库，推荐使用[深蓝词库转换]构建分词词库，它可以快速地将搜狗细胞词库等输入法词库转换为jiebaR的词库格式。</p>
+<pre><code class="lang-r">show_dictpath()     <span class="hljs-comment">### 显示词典路径</span>
+edit_dict(<span class="hljs-string">"user"</span>)   <span class="hljs-comment">### 编辑用户词典</span>
+?edit_dict()        <span class="hljs-comment">### 打开帮助系统</span>
+</code></pre>
+<p>系统词典共有三列，第一列为词项，第二列为词频，第三列为词性标记。</p>
+<p>用户词典有两列，第一列为词项，第二列为词性标记。用户词库默认词频为系统词库中的最大词频，如需自定义词频率，可将新词添加入系统词库中。</p>
+<p>词典中的词性标记采用ictclas的标记方法。</p>
+
+                    
+                    </section>
                 
                 
                 </div>

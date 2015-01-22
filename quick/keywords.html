@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>关键词提取 | jiebaR 中文分词</title>
+        <title>关键词提取 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,7 +19,7 @@
         
     
     
-    <link rel="next" href="../quick/simhash.html" />
+    <link rel="next" href="../quick/sim.html" />
     
     
     <link rel="prev" href="../quick/tagger.html" />
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.3" data-basepath=".." data-revision="1421899968404">
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -189,15 +189,31 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="quick/simhash.html">
+        <li class="chapter " data-level="2.4" data-path="quick/sim.html">
             
                 
-                    <a href="../quick/simhash.html">
+                    <a href="../quick/sim.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.4.</b>
                         
-                         Simhash 计算
+                         Simhash计算
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+            
+                
+                    <a href="../quick/quick_mode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         快速模式
                     </a>
                 
             
@@ -227,13 +243,29 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.1" data-path="dict/init.html">
+            
+                
+                    <a href="../dict/init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         词典设置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="../dict/dict.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>3.2.</b>
                         
                          系统词典
                     </a>
@@ -243,13 +275,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="dict/user.html">
+        <li class="chapter " data-level="3.3" data-path="dict/user.html">
             
                 
                     <a href="../dict/user.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                          用户词典
                     </a>
@@ -259,13 +291,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="dict/others.html">
+        <li class="chapter " data-level="3.4" data-path="dict/others.html">
             
                 
                     <a href="../dict/others.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                          其他词典
                     </a>
@@ -346,6 +378,28 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+            
+                
+                    <a href="../faq/tm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         关于tm包
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -430,13 +484,28 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >jiebaR 中文分词</a>
+        <a href="../" >jiebaR 中文分词  </a>
     </h1>
 </div>
 
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_54">
+                    
+                        <h2 id="">关键词提取</h2>
+<p>关键词提取所使用逆向文件频率（IDF）文本语料库可以切换成自定义语料库的路径，使用方法与分词类似。<code>topn</code>参数为关键词的个数。</p>
+<pre><code class="lang-r">keys = worker(<span class="hljs-string">"keywords"</span>, topn = <span class="hljs-number">1</span>)
+keys &lt;= <span class="hljs-string">"我爱北京天安门"</span>
+keys &lt;= <span class="hljs-string">"一个文件路径.txt"</span>
+</code></pre>
+<pre><code class="lang-r">  <span class="hljs-number">8.9954</span> 
+<span class="hljs-string">"天安门"</span>
+</code></pre>
+
+                    
+                    </section>
                 
                 
                 </div>
@@ -447,7 +516,7 @@
         <a href="../quick/tagger.html" class="navigation navigation-prev " aria-label="Previous page: 词性标记"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../quick/simhash.html" class="navigation navigation-next " aria-label="Next page: Simhash 计算"><i class="fa fa-angle-right"></i></a>
+        <a href="../quick/sim.html" class="navigation navigation-next " aria-label="Next page: Simhash计算"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

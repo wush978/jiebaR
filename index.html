@@ -5,9 +5,9 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>Introduction | jiebaR 中文分词</title>
+        <title>Introduction | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Book generated using GitBook">
+        <meta name="description" content="Linux : Build Status　Mac : Build Status　Win : Build status">
         <meta name="generator" content="GitBook 1.5.0">
         <meta name="HandheldFriendly" content="true"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -36,7 +36,7 @@
 
 
         
-    <div class="book" data-level="0" data-basepath="." data-revision="1421899968404">
+    <div class="book" data-level="0" data-basepath="." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -187,15 +187,31 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="quick/simhash.html">
+        <li class="chapter " data-level="2.4" data-path="quick/sim.html">
             
                 
-                    <a href="./quick/simhash.html">
+                    <a href="./quick/sim.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.4.</b>
                         
-                         Simhash 计算
+                         Simhash计算
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+            
+                
+                    <a href="./quick/quick_mode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         快速模式
                     </a>
                 
             
@@ -225,13 +241,29 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.1" data-path="dict/init.html">
+            
+                
+                    <a href="./dict/init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         词典设置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="./dict/dict.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>3.2.</b>
                         
                          系统词典
                     </a>
@@ -241,13 +273,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="dict/user.html">
+        <li class="chapter " data-level="3.3" data-path="dict/user.html">
             
                 
                     <a href="./dict/user.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                          用户词典
                     </a>
@@ -257,13 +289,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="dict/others.html">
+        <li class="chapter " data-level="3.4" data-path="dict/others.html">
             
                 
                     <a href="./dict/others.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                          其他词典
                     </a>
@@ -344,6 +376,28 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+            
+                
+                    <a href="./faq/tm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         关于tm包
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -428,7 +482,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="./" >jiebaR 中文分词</a>
+        <a href="./" >jiebaR 中文分词  </a>
     </h1>
 </div>
 
@@ -436,9 +490,11 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_1">
+                    <section class="normal" id="section-gitbook_43">
                     
-                        <h1 id="jiebar-">jiebaR 中文分词</h1>
+                        <h1 id="jiebar---httpszenodoorgbadge8525qinwfjiebarsvghttpdxdoiorg105281zenodo13729">jiebaR 中文分词  <a href="http://dx.doi.org/10.5281/zenodo.13729" target="_blank"><img src="https://zenodo.org/badge/8525/qinwf/jiebaR.svg" alt=""></a></h1>
+<p>Linux : <a href="https://travis-ci.org/qinwf/jiebaR" target="_blank"><img src="https://travis-ci.org/qinwf/jiebaR.svg?branch=master" alt="Build Status"></a>　Mac : <a href="https://travis-ci.org/qinwf/jiebaR" target="_blank"><img src="https://travis-ci.org/qinwf/jiebaR.svg?branch=osx" alt="Build Status"></a>　Win : <a href="https://ci.appveyor.com/project/qinwf53234/jiebar/branch/master" target="_blank"><img src="https://ci.appveyor.com/api/projects/status/k8swxpkue1caiiwi/branch/master?svg=true" alt="Build status"></a></p>
+<p><a href="https://github.com/fxsjy/jieba" target="_blank">&quot;结巴&quot;中文分词</a>的R语言版本，支持最大概率法（Maximum Probability），隐式马尔科夫模型（Hidden Markov Model），索引模型（QuerySegment），混合模型（MixSegment），共四种分词模式，同时有词性标注，关键词提取，文本Simhash相似度比较等功能。项目使用了<a href="https://github.com/RcppCore/Rcpp" target="_blank">Rcpp</a>和<a href="https://github.com/aszxqw/cppjieba" target="_blank">CppJieba</a>进行开发。</p>
 
                     
                     </section>
@@ -484,7 +540,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"ga":{"token":"UA-58841928-1"},"richquotes":{"todos":true},"disqus":{"shortName":"qinwenfeng"}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"ga":{"token":"UA-58841928-1","configuration":"auto"},"richquotes":{"todos":true},"disqus":{"shortName":"qinwenfeng"}};
     gitbook.start(config);
 });
 </script>

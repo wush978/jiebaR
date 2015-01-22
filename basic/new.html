@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>新版特性 | jiebaR 中文分词</title>
+        <title>新版特性 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.1" data-basepath=".." data-revision="1421899968404">
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -189,15 +189,31 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="quick/simhash.html">
+        <li class="chapter " data-level="2.4" data-path="quick/sim.html">
             
                 
-                    <a href="../quick/simhash.html">
+                    <a href="../quick/sim.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.4.</b>
                         
-                         Simhash 计算
+                         Simhash计算
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+            
+                
+                    <a href="../quick/quick_mode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         快速模式
                     </a>
                 
             
@@ -227,13 +243,29 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.1" data-path="dict/init.html">
+            
+                
+                    <a href="../dict/init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         词典设置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="../dict/dict.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>3.2.</b>
                         
                          系统词典
                     </a>
@@ -243,13 +275,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="dict/user.html">
+        <li class="chapter " data-level="3.3" data-path="dict/user.html">
             
                 
                     <a href="../dict/user.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                          用户词典
                     </a>
@@ -259,13 +291,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="dict/others.html">
+        <li class="chapter " data-level="3.4" data-path="dict/others.html">
             
                 
                     <a href="../dict/others.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                          其他词典
                     </a>
@@ -346,6 +378,28 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+            
+                
+                    <a href="../faq/tm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         关于tm包
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -430,13 +484,87 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >jiebaR 中文分词</a>
+        <a href="../" >jiebaR 中文分词  </a>
     </h1>
 </div>
 
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_42">
+                    
+                        <h2 id="github-v042">GitHub v0.4.2</h2>
+<p>一、 增加过滤分词结果的方法 <code>filter_segment()</code>，类似于关键词提取中使用的停止词功能。</p>
+<pre><code class="lang-r">cutter = worker()
+result_segment = cutter[<span class="hljs-string">"我是测试文本，用于测试过滤分词效果。"</span>]
+result_segment
+</code></pre>
+<pre><code class="lang-r">[<span class="hljs-number">1</span>] <span class="hljs-string">"我"</span>   <span class="hljs-string">"是"</span>   <span class="hljs-string">"测试"</span> <span class="hljs-string">"文本"</span> <span class="hljs-string">"用于"</span> <span class="hljs-string">"测试"</span> <span class="hljs-string">"过滤"</span> <span class="hljs-string">"分词"</span> <span class="hljs-string">"效果"</span>
+</code></pre>
+<pre><code class="lang-r">filter_words = c(<span class="hljs-string">"我"</span>,<span class="hljs-string">"你"</span>,<span class="hljs-string">"它"</span>,<span class="hljs-string">"大家"</span>)
+filter_segment(result_segment,filter_words)
+</code></pre>
+<pre><code class="lang-r">[<span class="hljs-number">1</span>] <span class="hljs-string">"是"</span>   <span class="hljs-string">"测试"</span> <span class="hljs-string">"文本"</span> <span class="hljs-string">"用于"</span> <span class="hljs-string">"测试"</span> <span class="hljs-string">"过滤"</span> <span class="hljs-string">"分词"</span> <span class="hljs-string">"效果"</span>
+</code></pre>
+<p>二、 分词支持 “向量文本输入 =&gt; <code>list</code>输出” 与 “按行输入文件 =&gt;  <code>list</code>输出” </p>
+<p>通过 bylines 选项控制是否按行输出，默认值为<code>bylines = FALSE</code>。</p>
+<pre><code class="lang-r">cutter = worker(bylines = <span class="hljs-literal">TRUE</span>)
+cutter
+</code></pre>
+<pre><code class="lang-r">Worker Type:  Mix Segment
+
+Detect Encoding :  <span class="hljs-literal">TRUE</span>
+Default Encoding:  UTF-<span class="hljs-number">8</span>
+Keep Symbols    :  <span class="hljs-literal">FALSE</span>
+Output Path     :  
+Write File      :  <span class="hljs-literal">TRUE</span>
+By Lines        :  <span class="hljs-literal">TRUE</span>
+Max Read Lines  :  <span class="hljs-number">1e+05</span>
+....
+</code></pre>
+<pre><code class="lang-r">cutter[c(<span class="hljs-string">"这是非常的好"</span>,<span class="hljs-string">"大家好才是真的好"</span>)]
+</code></pre>
+<pre><code class="lang-r">[[<span class="hljs-number">1</span>]]
+[<span class="hljs-number">1</span>] <span class="hljs-string">"这是"</span> <span class="hljs-string">"非常"</span> <span class="hljs-string">"的"</span>   <span class="hljs-string">"好"</span>  
+
+[[<span class="hljs-number">2</span>]]
+[<span class="hljs-number">1</span>] <span class="hljs-string">"大家"</span> <span class="hljs-string">"好"</span>   <span class="hljs-string">"才"</span>   <span class="hljs-string">"是"</span>   <span class="hljs-string">"真的"</span> <span class="hljs-string">"好"</span>
+</code></pre>
+<pre><code class="lang-r">cutter$write = <span class="hljs-literal">FALSE</span>
+
+<span class="hljs-comment"># 输入文件文本是：</span>
+<span class="hljs-comment"># 这是一个分行测试文本</span>
+<span class="hljs-comment"># 用于测试分行的输出结果</span>
+
+cutter[<span class="hljs-string">"files.path"</span>]
+</code></pre>
+<pre><code class="lang-r">[[<span class="hljs-number">1</span>]]
+[<span class="hljs-number">1</span>] <span class="hljs-string">"这是"</span> <span class="hljs-string">"一个"</span> <span class="hljs-string">"分行"</span> <span class="hljs-string">"测试"</span> <span class="hljs-string">"文本"</span> 
+
+[[<span class="hljs-number">2</span>]]
+[<span class="hljs-number">1</span>] <span class="hljs-string">"用于"</span> <span class="hljs-string">"测试"</span> <span class="hljs-string">"分行"</span>   <span class="hljs-string">"的"</span> <span class="hljs-string">"输出"</span> <span class="hljs-string">"结果"</span>
+</code></pre>
+<pre><code class="lang-r"><span class="hljs-comment"># 按行写入文件</span>
+cutter$write = <span class="hljs-literal">TRUE</span>
+cutter$bylines = <span class="hljs-literal">TRUE</span>
+</code></pre>
+<p>三、可以使用 <code>vector_keywords</code> 对一个文本向量提取关键词。</p>
+<pre><code class="lang-r">keyworker = worker(<span class="hljs-string">"keywords"</span>)
+cutter = worker()
+vector_keywords(cutter[<span class="hljs-string">"这是一个比较长的测试文本。"</span>],keyworker)
+</code></pre>
+<pre><code class="lang-r"><span class="hljs-number">8.94485</span> <span class="hljs-number">7.14724</span> <span class="hljs-number">4.77176</span> <span class="hljs-number">4.29163</span> <span class="hljs-number">2.81755</span> 
+ <span class="hljs-string">"文本"</span>  <span class="hljs-string">"测试"</span>  <span class="hljs-string">"比较"</span>  <span class="hljs-string">"这是"</span>  <span class="hljs-string">"一个"</span>
+</code></pre>
+<pre><code class="lang-r">vector_keywords(c(<span class="hljs-string">"今天"</span>,<span class="hljs-string">"天气"</span>,<span class="hljs-string">"真的"</span>,<span class="hljs-string">"十分"</span>,<span class="hljs-string">"不错"</span>,<span class="hljs-string">"的"</span>,<span class="hljs-string">"感觉"</span>),keyworker)
+</code></pre>
+<pre><code class="lang-r"><span class="hljs-number">6.45994</span> <span class="hljs-number">6.18823</span> <span class="hljs-number">5.64148</span> <span class="hljs-number">5.63374</span> <span class="hljs-number">4.99212</span> 
+ <span class="hljs-string">"天气"</span>  <span class="hljs-string">"不错"</span>  <span class="hljs-string">"感觉"</span>  <span class="hljs-string">"真的"</span>  <span class="hljs-string">"今天"</span>
+</code></pre>
+
+                    
+                    </section>
                 
                 
                 </div>

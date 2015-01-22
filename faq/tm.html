@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速指南 | jiebaR 中文分词  </title>
+        <title>关于tm包 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,8 @@
         
     
     
-    <link rel="next" href="../quick/segment.html" />
     
-    
-    <link rel="prev" href="../basic/install.html" />
+    <link rel="prev" href="../faq/README.html" />
     
 
         <script src="../gitbook/plugins/gitbook-plugin-mermaid/mermaid.full.min.js" id="mermaid-script"></script>
@@ -38,7 +36,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1421904010568">
+    <div class="book" data-level="6.1" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -124,7 +122,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="quick/README.html">
+        <li class="chapter " data-level="2" data-path="quick/README.html">
             
                 
                     <a href="../quick/README.html">
@@ -383,7 +381,7 @@
                 
     
         
-        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+        <li class="chapter active" data-level="6.1" data-path="faq/tm.html">
             
                 
                     <a href="../faq/tm.html">
@@ -492,10 +490,32 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_53">
+                    <section class="normal" id="section-gitbook_50">
                     
-                        <h1 id="">快速入门</h1>
-<p>这一部分的内容将介绍 jiebaR 包基本的使用方法。</p>
+                        <h3 id="-tm-">为什么 <code>tm</code> 包里词都连起来了？</h3>
+<p>不是分词包的问题，tm包可能对中文支持不太好，直接输入中文就会有这样子的情况，应该只在 Windows （各种编码问题….）上会有，Linux下没有这个问题。</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(tm)
+
+xx&lt;-c(
+“进入”, “一个”, “平衡”, “时代”, “现在”, “是”, “住宅”, “价格上涨”,
+“太快”, “政府”, “采用”, “政策”, “方式”, “调控”, “这些”, “资金”,
+“就”, “有”, “往”, “商业地产”, “走”, “的”, “趋势”, “因为”, “商业地产”,
+“把”, “自己”, “划分”, “到”, “这”, “一类”, “去”, “从”, “职业”,
+“来说”, “我”, “可能”, “是”, “设计师”, “医生”, “老师”, “记者”,
+“那”, “我”, “就”, “做”, “一个”, “好”, “的”, “记者”, “好”, “的”,
+“医生”, “这是”, “社会”, “上”, “需要”, “的”, “现在”, “这个”, “时代”,
+“确实”, “是”, “一个”, “特别”, “好”, “的”, “时代”, “也”, “是”)
+
+corpus = Corpus(VectorSource(xx))
+dtm_psy = TermDocumentMatrix(corpus)
+tdm = DocumentTermMatrix(corpus,control = list(wordLengths = c(<span class="hljs-number">1</span>, <span class="hljs-literal">Inf</span>)))
+inspect(tdm)
+</code></pre>
+<pre><code class="lang-r">Terms
+Docs <span class="hljs-number">20</span> <span class="hljs-number">30</span> 
+  奥运会\n 把\n 白领 北京市\n 背道而驰 本来 不\n 不大 不好 财经 采用
+   <span class="hljs-number">1</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+</code></pre>
 
                     
                     </section>
@@ -506,10 +526,8 @@
         </div>
 
         
-        <a href="../basic/install.html" class="navigation navigation-prev " aria-label="Previous page: 安装"><i class="fa fa-angle-left"></i></a>
+        <a href="../faq/README.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 常见问题"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../quick/segment.html" class="navigation navigation-next " aria-label="Next page: 分词"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>快速指南 | jiebaR 中文分词  </title>
+        <title>快速模式 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -19,10 +19,10 @@
         
     
     
-    <link rel="next" href="../quick/segment.html" />
+    <link rel="next" href="../dict/README.html" />
     
     
-    <link rel="prev" href="../basic/install.html" />
+    <link rel="prev" href="../quick/sim.html" />
     
 
         <script src="../gitbook/plugins/gitbook-plugin-mermaid/mermaid.full.min.js" id="mermaid-script"></script>
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2" data-basepath=".." data-revision="1421904010568">
+    <div class="book" data-level="2.5" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -124,7 +124,7 @@
         </li>
     
         
-        <li class="chapter active" data-level="2" data-path="quick/README.html">
+        <li class="chapter " data-level="2" data-path="quick/README.html">
             
                 
                     <a href="../quick/README.html">
@@ -205,7 +205,7 @@
         </li>
     
         
-        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+        <li class="chapter active" data-level="2.5" data-path="quick/quick_mode.html">
             
                 
                     <a href="../quick/quick_mode.html">
@@ -492,10 +492,45 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_53">
+                    <section class="normal" id="section-gitbook_55">
                     
-                        <h1 id="">快速入门</h1>
-<p>这一部分的内容将介绍 jiebaR 包基本的使用方法。</p>
+                        <h2 id="">快速模式</h2>
+<p>无需使用<code>worker()</code>，使用默认参数启动引擎，并立即进行分词：</p>
+<pre><code class="lang-r"><span class="hljs-keyword">library</span>(jiebaR)
+
+qseg &lt;= <span class="hljs-string">"江州市长江大桥参加了长江大桥的通车仪式"</span>
+</code></pre>
+<pre><code class="lang-r">[<span class="hljs-number">1</span>] <span class="hljs-string">"江州"</span>     <span class="hljs-string">"市长"</span>     <span class="hljs-string">"江大桥"</span>   <span class="hljs-string">"参加"</span>     <span class="hljs-string">"了"</span>       <span class="hljs-string">"长江大桥"</span> <span class="hljs-string">"的"</span>      
+[<span class="hljs-number">8</span>] <span class="hljs-string">"通车"</span>     <span class="hljs-string">"仪式"</span>
+</code></pre>
+<p><code>qseg</code> ~ quick segmentation，使用默认分词模式，自动建立分词引擎，类似于<code>ggplot2</code>包里面的<code>qplot</code>函数。</p>
+<pre><code class="lang-r"><span class="hljs-comment">### 第一次运行时，启动默认引擎 quick_worker，第二次运行，不再启动引擎。</span>
+qseg &lt;= <span class="hljs-string">"这是测试文本。"</span>
+</code></pre>
+<pre><code class="lang-r">[<span class="hljs-number">1</span>] <span class="hljs-string">"这是"</span> <span class="hljs-string">"测试"</span> <span class="hljs-string">"文本"</span>
+</code></pre>
+<pre><code class="lang-r"><span class="hljs-comment">### 效果相同</span>
+quick_worker &lt;=  <span class="hljs-string">"这是测试文本。"</span> 
+
+qseg
+</code></pre>
+<pre><code class="lang-r">Worker Type:  Mix Segment
+
+Detect Encoding :  <span class="hljs-literal">TRUE</span>
+Default Encoding:  UTF-<span class="hljs-number">8</span>
+Keep Symbols    :  <span class="hljs-literal">FALSE</span>
+Output Path     :  <span class="hljs-literal">NULL</span>
+.......
+</code></pre>
+<p>可以通过<code>qseg$</code>重设模型参数，重设模型参数将会修改以后每次默认启动的默认参数，如果只是希望单次修改模型参数，可以使用非快速模式的修改方式<code>quick_worker$</code>。</p>
+<pre><code class="lang-r">qseg$type = <span class="hljs-string">"mp"</span> <span class="hljs-comment">### 重设模型参数的同时，重新启动引擎。</span>
+
+qseg$type        <span class="hljs-comment">### 下次重新启动包是将使用现在的参数，构建模型。</span>
+
+quick_worker$detect = <span class="hljs-literal">T</span> <span class="hljs-comment">### 临时修改，对下次重新启动包时，没有影响。</span>
+
+get_qsegmodel()         <span class="hljs-comment">### 获得当前快速模式的默认参数</span>
+</code></pre>
 
                     
                     </section>
@@ -506,10 +541,10 @@
         </div>
 
         
-        <a href="../basic/install.html" class="navigation navigation-prev " aria-label="Previous page: 安装"><i class="fa fa-angle-left"></i></a>
+        <a href="../quick/sim.html" class="navigation navigation-prev " aria-label="Previous page: Simhash计算"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../quick/segment.html" class="navigation navigation-next " aria-label="Next page: 分词"><i class="fa fa-angle-right"></i></a>
+        <a href="../dict/README.html" class="navigation navigation-next " aria-label="Next page: 词典使用"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

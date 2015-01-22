@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>分词 | jiebaR 中文分词</title>
+        <title>分词 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="2.1" data-basepath=".." data-revision="1421899968404">
+    <div class="book" data-level="2.1" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -189,15 +189,31 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="quick/simhash.html">
+        <li class="chapter " data-level="2.4" data-path="quick/sim.html">
             
                 
-                    <a href="../quick/simhash.html">
+                    <a href="../quick/sim.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.4.</b>
                         
-                         Simhash 计算
+                         Simhash计算
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+            
+                
+                    <a href="../quick/quick_mode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         快速模式
                     </a>
                 
             
@@ -227,13 +243,29 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.1" data-path="dict/init.html">
+            
+                
+                    <a href="../dict/init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         词典设置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="../dict/dict.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>3.2.</b>
                         
                          系统词典
                     </a>
@@ -243,13 +275,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="dict/user.html">
+        <li class="chapter " data-level="3.3" data-path="dict/user.html">
             
                 
                     <a href="../dict/user.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                          用户词典
                     </a>
@@ -259,13 +291,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="dict/others.html">
+        <li class="chapter " data-level="3.4" data-path="dict/others.html">
             
                 
                     <a href="../dict/others.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                          其他词典
                     </a>
@@ -346,6 +378,28 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+            
+                
+                    <a href="../faq/tm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         关于tm包
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -430,13 +484,92 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >jiebaR 中文分词</a>
+        <a href="../" >jiebaR 中文分词  </a>
     </h1>
 </div>
 
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_56">
+                    
+                        <h2 id="">分词</h2>
+<p>jiebaR提供了四种分词模式，可以通过<code>worker()</code>来初始化分词引擎，使用<code>segment()</code>进行分词。</p>
+<pre><code class="lang-r"><span class="hljs-comment">##  接受默认参数，建立分词引擎 </span>
+mixseg = worker()
+
+<span class="hljs-comment">##  相当于：</span>
+<span class="hljs-comment">##       worker( type = "mix", dict = "inst/dict/jieba.dict.utf8",</span>
+<span class="hljs-comment">##               hmm  = "inst/dict/hmm_model.utf8",  ### HMM模型数据</span>
+<span class="hljs-comment">##               user = "inst/dict/user.dict.utf8") ### 用户自定义词库</span>
+
+mixseg &lt;= <span class="hljs-string">"江州市长江大桥参加了长江大桥的通车仪式"</span>  <span class="hljs-comment">### &lt;= 分词运算符</span>
+
+<span class="hljs-comment">## 相当于 segment( "江州市长江大桥参加了长江大桥的通车仪式" , mixseg ) </span>
+<span class="hljs-comment">## 或者 mixseg["江州市长江大桥参加了长江大桥的通车仪式"]</span>
+</code></pre>
+<pre><code class="lang-r">[<span class="hljs-number">1</span>] <span class="hljs-string">"江州"</span>     <span class="hljs-string">"市长"</span>     <span class="hljs-string">"江大桥"</span>   <span class="hljs-string">"参加"</span>     <span class="hljs-string">"了"</span>       <span class="hljs-string">"长江大桥"</span>
+[<span class="hljs-number">7</span>] <span class="hljs-string">"的"</span>       <span class="hljs-string">"通车"</span>     <span class="hljs-string">"仪式"</span>
+</code></pre>
+<p>支持对文件进行分词：</p>
+<pre><code class="lang-r">mixseg &lt;= <span class="hljs-string">"./temp.dat"</span>  <span class="hljs-comment">### 自动判断输入文件编码模式，默认文件输出在同目录下。</span>
+
+<span class="hljs-comment">## segment( "./temp.dat" , mixseg )</span>
+</code></pre>
+<h2 id="">分词引擎介绍</h2>
+<p>在加载分词引擎时，可以自定义词库路径，同时可以启动不同的引擎：</p>
+<p>最大概率法（MPSegment），负责根据Trie树构建有向无环图和进行动态规划算法，是分词算法的核心。</p>
+<p>隐式马尔科夫模型（HMMSegment）是根据基于人民日报等语料库构建的HMM模型来进行分词，主要算法思路是根据(B,E,M,S)四个状态来代表每个字的隐藏状态。 HMM模型由dict/hmm_model.utf8提供。分词算法即viterbi算法。</p>
+<p>混合模型（MixSegment）是四个分词引擎里面分词效果较好的类，结它合使用最大概率法和隐式马尔科夫模型。</p>
+<p>索引模型（QuerySegment）先使用混合模型进行切词，再对于切出来的较长的词，枚举句子中所有可能成词的情况，找出词库里存在。</p>
+<pre><code class="lang-r">mixseg2 = worker(type  = <span class="hljs-string">"mix"</span>, dict = <span class="hljs-string">"dict/jieba.dict.utf8"</span>,
+                 hmm   = <span class="hljs-string">"dict/hmm_model.utf8"</span>,  
+                 user  = <span class="hljs-string">"dict/test.dict.utf8"</span>,
+                 detect=<span class="hljs-literal">T</span>,      symbol = <span class="hljs-literal">F</span>,
+                 lines = <span class="hljs-number">1e+05</span>, output = <span class="hljs-literal">NULL</span>
+                 ) 
+mixseg2   <span class="hljs-comment">### 输出worker的设置</span>
+</code></pre>
+<pre><code class="lang-r">Worker Type:  Mix Segment
+
+Detect Encoding :  <span class="hljs-literal">TRUE</span>
+Default Encoding:  UTF-<span class="hljs-number">8</span>
+Keep Symbols    :  <span class="hljs-literal">FALSE</span>
+Output Path     :  
+Write File      :  <span class="hljs-literal">TRUE</span>
+Max Read Lines  :  <span class="hljs-number">1e+05</span>
+
+Fixed Model Components:  
+
+$dict
+[<span class="hljs-number">1</span>] <span class="hljs-string">"dict/jieba.dict.utf8"</span>
+
+$hmm
+[<span class="hljs-number">1</span>] <span class="hljs-string">"dict/hmm_model.utf8"</span>
+
+$user
+[<span class="hljs-number">1</span>] <span class="hljs-string">"dict/test.dict.utf8"</span>
+
+$detect $encoding $symbol $output $write $lines can be reset.
+</code></pre>
+<p>可以通过R语言常用的 <code>$</code>符号重设一些<code>worker</code>的参数设置，如 <code>WorkerName$symbol = T</code>，在输出中保留标点符号。一些参数在初始化的时候已经确定，无法修改， 可以通过<code>WorkerName$PrivateVarible</code>来获得这些信息。</p>
+<pre><code class="lang-r">mixseg$encoding
+
+mixseg$detect = <span class="hljs-literal">F</span>
+</code></pre>
+<h2 id="">词典介绍</h2>
+<p>可以自定义用户词库，推荐使用[深蓝词库转换]构建分词词库，它可以快速地将搜狗细胞词库等输入法词库转换为jiebaR的词库格式。</p>
+<pre><code class="lang-r">show_dictpath()     <span class="hljs-comment">### 显示词典路径</span>
+edit_dict(<span class="hljs-string">"user"</span>)   <span class="hljs-comment">### 编辑用户词典</span>
+?edit_dict()        <span class="hljs-comment">### 打开帮助系统</span>
+</code></pre>
+<p>系统词典共有三列，第一列为词项，第二列为词频，第三列为词性标记。</p>
+<p>用户词典有两列，第一列为词项，第二列为词性标记。用户词库默认词频为系统词库中的最大词频，如需自定义词频率，可将新词添加入系统词库中。</p>
+<p>词典中的词性标记采用ictclas的标记方法。</p>
+
+                    
+                    </section>
                 
                 
                 </div>

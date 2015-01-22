@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>系统词典 | jiebaR 中文分词</title>
+        <title>系统词典 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -22,7 +22,7 @@
     <link rel="next" href="../dict/user.html" />
     
     
-    <link rel="prev" href="../dict/README.html" />
+    <link rel="prev" href="../dict/init.html" />
     
 
         <script src="../gitbook/plugins/gitbook-plugin-mermaid/mermaid.full.min.js" id="mermaid-script"></script>
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="3.1" data-basepath=".." data-revision="1421899968404">
+    <div class="book" data-level="3.2" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -189,15 +189,31 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="quick/simhash.html">
+        <li class="chapter " data-level="2.4" data-path="quick/sim.html">
             
                 
-                    <a href="../quick/simhash.html">
+                    <a href="../quick/sim.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.4.</b>
                         
-                         Simhash 计算
+                         Simhash计算
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+            
+                
+                    <a href="../quick/quick_mode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         快速模式
                     </a>
                 
             
@@ -227,13 +243,29 @@
                 
     
         
-        <li class="chapter active" data-level="3.1" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.1" data-path="dict/init.html">
+            
+                
+                    <a href="../dict/init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         词典设置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="../dict/dict.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>3.2.</b>
                         
                          系统词典
                     </a>
@@ -243,13 +275,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="dict/user.html">
+        <li class="chapter " data-level="3.3" data-path="dict/user.html">
             
                 
                     <a href="../dict/user.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                          用户词典
                     </a>
@@ -259,13 +291,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="dict/others.html">
+        <li class="chapter " data-level="3.4" data-path="dict/others.html">
             
                 
                     <a href="../dict/others.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                          其他词典
                     </a>
@@ -346,6 +378,28 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+            
+                
+                    <a href="../faq/tm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         关于tm包
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -430,7 +484,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >jiebaR 中文分词</a>
+        <a href="../" >jiebaR 中文分词  </a>
     </h1>
 </div>
 
@@ -438,13 +492,38 @@
                 <div class="page-inner">
                 
                 
+                    <section class="normal" id="section-gitbook_45">
+                    
+                        <h2 id="">系统词典</h2>
+<p>可以动态地建立分词器：</p>
+<pre><code class="lang-r">worker( dict=<span class="hljs-string">"系统词典，先加载，可以设置词频"</span>, 
+        user=<span class="hljs-string">"用户词典，系统词典加载后加载，所有词的词频为系统词典的最大词频"</span>)
+</code></pre>
+<p>如果需要添加词，直接打开记事本，然后一行输入一个词，就可以了。输入完以后，user=”刚才设置的文本文件的路径”，</p>
+<p>用户词典不需要设置词频，是因为很有可能，用户也不太清楚一个词的词频是什么，但是加入用户词典的词，很有可能是要切分出来的，所以默认设置最大词频，保证这个词能够最大程度地被切出来，如果需要设置词频，可以把词加入到系统词典里。</p>
+<p>比如user词库，在 <code>C:/user.txt</code> ：</p>
+<pre><code class="lang-r">北京大学
+清华大学
+</code></pre>
+<p>新建分词器 <code>cutter1 = worker(user = “C:/user.txt”)</code>，</p>
+<p>如果需要再加入几个大学，打开这个文件：</p>
+<pre><code class="lang-r">北京大学
+清华大学
+浙江大学
+</code></pre>
+<p>新建分词器 <code>cutter2 = worker(user = “C:/user.txt”)</code>，</p>
+<p>这样，R 系统里就有两个分词器，可以动态地调用你想用的，对比不同分词器的结果。</p>
+
+                    
+                    </section>
+                
                 
                 </div>
             </div>
         </div>
 
         
-        <a href="../dict/README.html" class="navigation navigation-prev " aria-label="Previous page: 词典使用"><i class="fa fa-angle-left"></i></a>
+        <a href="../dict/init.html" class="navigation navigation-prev " aria-label="Previous page: 词典设置"><i class="fa fa-angle-left"></i></a>
         
         
         <a href="../dict/user.html" class="navigation navigation-next " aria-label="Next page: 用户词典"><i class="fa fa-angle-right"></i></a>

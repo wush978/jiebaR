@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
-        <title>介绍 | jiebaR 中文分词</title>
+        <title>介绍 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 1.5.0">
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="1421899968404">
+    <div class="book" data-level="1" data-basepath=".." data-revision="1421904010568">
     
 
 <div class="book-summary">
@@ -189,15 +189,31 @@
         </li>
     
         
-        <li class="chapter " data-level="2.4" data-path="quick/simhash.html">
+        <li class="chapter " data-level="2.4" data-path="quick/sim.html">
             
                 
-                    <a href="../quick/simhash.html">
+                    <a href="../quick/sim.html">
                         <i class="fa fa-check"></i>
                         
                             <b>2.4.</b>
                         
-                         Simhash 计算
+                         Simhash计算
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.5" data-path="quick/quick_mode.html">
+            
+                
+                    <a href="../quick/quick_mode.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                         快速模式
                     </a>
                 
             
@@ -227,13 +243,29 @@
                 
     
         
-        <li class="chapter " data-level="3.1" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.1" data-path="dict/init.html">
+            
+                
+                    <a href="../dict/init.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                         词典设置
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="../dict/dict.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.1.</b>
+                            <b>3.2.</b>
                         
                          系统词典
                     </a>
@@ -243,13 +275,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.2" data-path="dict/user.html">
+        <li class="chapter " data-level="3.3" data-path="dict/user.html">
             
                 
                     <a href="../dict/user.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.2.</b>
+                            <b>3.3.</b>
                         
                          用户词典
                     </a>
@@ -259,13 +291,13 @@
         </li>
     
         
-        <li class="chapter " data-level="3.3" data-path="dict/others.html">
+        <li class="chapter " data-level="3.4" data-path="dict/others.html">
             
                 
                     <a href="../dict/others.html">
                         <i class="fa fa-check"></i>
                         
-                            <b>3.3.</b>
+                            <b>3.4.</b>
                         
                          其他词典
                     </a>
@@ -346,6 +378,28 @@
                     </a>
                 
             
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="faq/tm.html">
+            
+                
+                    <a href="../faq/tm.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         关于tm包
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -430,13 +484,35 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../" >jiebaR 中文分词</a>
+        <a href="../" >jiebaR 中文分词  </a>
     </h1>
 </div>
 
             <div class="page-wrapper" tabindex="-1">
                 <div class="page-inner">
                 
+                
+                    <section class="normal" id="section-gitbook_40">
+                    
+                        <h1 id="">介绍</h1>
+<p><a href="https://github.com/fxsjy/jieba" target="_blank">&quot;结巴&quot;中文分词</a>的R语言版本，支持最大概率法（Maximum Probability），隐式马尔科夫模型（Hidden Markov Model），索引模型（QuerySegment），混合模型（MixSegment），共四种分词模式，同时有词性标注，关键词提取，文本Simhash相似度比较等功能。项目使用了<a href="https://github.com/RcppCore/Rcpp" target="_blank">Rcpp</a>和<a href="https://github.com/aszxqw/cppjieba" target="_blank">CppJieba</a>进行开发。</p>
+<p>你还可以试试支持中文编程的 Julia 分词 <a href="https://github.com/qinwf/Jieba.jl" target="_blank">Jieba.jl</a>。</p>
+<h2 id="">特性</h2>
+<ul>
+<li>支持 Windows，Linux，Mac 操作系统。</li>
+<li>通过 Rcpp 实现同时加载多个分词系统,可以分别使用不同的分词模式和词库。</li>
+<li>支持多种分词模式、中文姓名识别、关键词提取、词性标注以及文本Simhash相似度比较等功能。</li>
+<li>支持加载自定义用户词库，设置词频、词性。</li>
+<li>同时支持简体中文、繁体中文分词。</li>
+<li>支持自动判断编码模式。</li>
+<li>比原<a href="https://github.com/fxsjy/jieba" target="_blank">&quot;结巴&quot;中文分词</a>速度快，是其他R分词包的5-20倍。</li>
+<li>安装简单，无需复杂设置。</li>
+<li>可以通过<a href="http://rpy.sourceforge.net/" target="_blank">Rpy2</a>，<a href="http://dahl.byu.edu/software/jvmr/" target="_blank">jvmr</a>等被其他语言调用。</li>
+<li>基于MIT协议。</li>
+</ul>
+
+                    
+                    </section>
                 
                 
                 </div>
@@ -481,7 +557,7 @@
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"ga":{"token":"UA-58841928-1","configuration":"auto"},"richquotes":{"todos":true},"disqus":{"shortName":"qinwenfeng"}};
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"ga":{"token":"UA-58841928-1"},"richquotes":{"todos":true},"disqus":{"shortName":"qinwenfeng"}};
     gitbook.start(config);
 });
 </script>
