@@ -25,7 +25,7 @@
     <link rel="prev" href="../basic/README.html" />
     
 
-        <script src="../gitbook/plugins/gitbook-plugin-mermaid/mermaid.full.min.js" id="mermaid-script"></script>
+        
     </head>
     <body>
         
@@ -38,7 +38,7 @@
 
 
         
-    <div class="book" data-level="1.1" data-basepath=".." data-revision="1421934727558">
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="1422797824714">
     
 
 <div class="book-summary">
@@ -492,7 +492,7 @@
                 <div class="page-inner">
                 
                 
-                    <section class="normal" id="section-gitbook_42">
+                    <section class="normal" id="section-gitbook_4">
                     
                         <h2 id="github-v042">GitHub v0.4.2</h2>
 <p>一、 增加过滤分词结果的方法 <code>filter_segment()</code>，类似于关键词提取中使用的停止词功能。</p>
@@ -562,6 +562,12 @@ vector_keywords(cutter[<span class="hljs-string">"这是一个比较长的测试
 <pre><code class="lang-r"><span class="hljs-number">6.45994</span> <span class="hljs-number">6.18823</span> <span class="hljs-number">5.64148</span> <span class="hljs-number">5.63374</span> <span class="hljs-number">4.99212</span> 
  <span class="hljs-string">"天气"</span>  <span class="hljs-string">"不错"</span>  <span class="hljs-string">"感觉"</span>  <span class="hljs-string">"真的"</span>  <span class="hljs-string">"今天"</span>
 </code></pre>
+<p>四、增加 <code>write = &quot;NOFILE&quot;</code> 选项，不检查文件路径。</p>
+<pre><code class="lang-r">cutter = worker(write = <span class="hljs-string">"NOFILE"</span>,symbol = <span class="hljs-literal">TRUE</span>)
+cutter[<span class="hljs-string">"./test.txt"</span>] <span class="hljs-comment"># 目录下有test.txt 文件</span>
+</code></pre>
+<pre><code class="lang-r">[<span class="hljs-number">1</span>] <span class="hljs-string">"."</span>    <span class="hljs-string">"/"</span>    <span class="hljs-string">"test"</span> <span class="hljs-string">"."</span>    <span class="hljs-string">"txt"</span>
+</code></pre>
 
                     
                     </section>
@@ -585,10 +591,6 @@ vector_keywords(cutter[<span class="hljs-string">"这是一个比较长的测试
 
     
     <script src="../gitbook/plugins/gitbook-plugin-ga/plugin.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-mermaid/plugin.js"></script>
     
 
     
