@@ -1,0 +1,152 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', '-g', 'gitbook-cli' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'gitbook-cli', null ]
+6 verbose cache add name=undefined spec="gitbook-cli" args=["gitbook-cli",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'gitbook-cli',
+7 verbose parsed url   path: 'gitbook-cli',
+7 verbose parsed url   href: 'gitbook-cli' }
+8 silly lockFile bdc2bae0-gitbook-cli gitbook-cli
+9 verbose lock gitbook-cli /home/out/.npm/bdc2bae0-gitbook-cli.lock
+10 silly lockFile bdc2bae0-gitbook-cli gitbook-cli
+11 silly lockFile bdc2bae0-gitbook-cli gitbook-cli
+12 verbose addNamed [ 'gitbook-cli', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 3f216d15-gitbook-cli gitbook-cli@
+15 verbose lock gitbook-cli@ /home/out/.npm/3f216d15-gitbook-cli.lock
+16 silly addNameRange { name: 'gitbook-cli', range: '*', hasData: false }
+17 verbose request where is /gitbook-cli
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id a46a8533c1890915
+20 verbose url raw /gitbook-cli
+21 verbose url resolving [ 'https://registry.npmjs.org/', './gitbook-cli' ]
+22 verbose url resolved https://registry.npmjs.org/gitbook-cli
+23 verbose request where is https://registry.npmjs.org/gitbook-cli
+24 info trying registry request attempt 1 at 13:29:29
+25 http GET https://registry.npmjs.org/gitbook-cli
+26 http 200 https://registry.npmjs.org/gitbook-cli
+27 silly registry.get cb [ 200,
+27 silly registry.get   { date: 'Tue, 03 Mar 2015 05:29:07 GMT',
+27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     etag: '"A8L69H7D6C93LRB2W6VB7ZLN0"',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=60',
+27 silly registry.get     'content-length': '9115',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-hk91-HKG',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1425360547.031513,VS0,VE961',
+27 silly registry.get     vary: 'Accept',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 silly addNameRange number 2 { name: 'gitbook-cli', range: '*', hasData: true }
+29 silly addNameRange versions [ 'gitbook-cli',
+29 silly addNameRange   [ '0.1.0', '0.2.0', '0.3.0', '0.3.1', '0.3.2' ] ]
+30 verbose addNamed [ 'gitbook-cli', '0.3.2' ]
+31 verbose addNamed [ '0.3.2', '0.3.2' ]
+32 silly lockFile 73a6b65e-gitbook-cli-0-3-2 gitbook-cli@0.3.2
+33 verbose lock gitbook-cli@0.3.2 /home/out/.npm/73a6b65e-gitbook-cli-0-3-2.lock
+34 silly lockFile 04aaf107-itbook-cli-gitbook-cli-0-3-2-tgz https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz
+35 verbose lock https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz /home/out/.npm/04aaf107-itbook-cli-gitbook-cli-0-3-2-tgz.lock
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz',
+36 verbose addRemoteTarball   'de2402f67fe73b5768b73598860fc04a77346e94' ]
+37 info retry fetch attempt 1 at 13:29:31
+38 verbose fetch to= /tmp/npm-17986-28O-q3nO/registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz
+39 http GET https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz
+40 http 200 https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz
+41 silly lockFile 04aaf107-itbook-cli-gitbook-cli-0-3-2-tgz https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz
+42 silly lockFile 04aaf107-itbook-cli-gitbook-cli-0-3-2-tgz https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz
+43 silly lockFile 73a6b65e-gitbook-cli-0-3-2 gitbook-cli@0.3.2
+44 silly lockFile 73a6b65e-gitbook-cli-0-3-2 gitbook-cli@0.3.2
+45 silly lockFile 3f216d15-gitbook-cli gitbook-cli@
+46 silly lockFile 3f216d15-gitbook-cli gitbook-cli@
+47 silly resolved [ { name: 'gitbook-cli',
+47 silly resolved     version: '0.3.2',
+47 silly resolved     homepage: 'https://www.gitbook.com',
+47 silly resolved     description: 'CLI to generate books using gitbook',
+47 silly resolved     main: 'lib/index.js',
+47 silly resolved     dependencies:
+47 silly resolved      { q: '1.0.1',
+47 silly resolved        lodash: '2.4.1',
+47 silly resolved        semver: '2.2.1',
+47 silly resolved        npmi: '0.1.1',
+47 silly resolved        tmp: '0.0.23',
+47 silly resolved        commander: '2.6.0',
+47 silly resolved        optimist: '0.6.1',
+47 silly resolved        'fs-extra': '0.15.0',
+47 silly resolved        'bash-color': '0.0.3',
+47 silly resolved        npm: '2.4.1' },
+47 silly resolved     repository:
+47 silly resolved      { type: 'git',
+47 silly resolved        url: 'https://github.com/GitbookIO/gitbook-cli.git' },
+47 silly resolved     author: { name: 'FriendCode Inc.', email: 'contact@gitbook.com' },
+47 silly resolved     license: 'Apache 2',
+47 silly resolved     bugs: { url: 'https://github.com/GitbookIO/gitbook-cli/issues' },
+47 silly resolved     bin: { gitbook: './bin/gitbook.js' },
+47 silly resolved     contributors: [ [Object], [Object] ],
+47 silly resolved     gitHead: '651c5f8129e1d63229f8776f839dbaf7edd17f0b',
+47 silly resolved     _id: 'gitbook-cli@0.3.2',
+47 silly resolved     scripts: {},
+47 silly resolved     _shasum: 'de2402f67fe73b5768b73598860fc04a77346e94',
+47 silly resolved     _from: 'gitbook-cli@',
+47 silly resolved     _npmVersion: '2.1.18',
+47 silly resolved     _nodeVersion: '0.10.33',
+47 silly resolved     _npmUser: { name: 'samypesse', email: 'samypesse@gmail.com' },
+47 silly resolved     maintainers: [ [Object] ],
+47 silly resolved     dist:
+47 silly resolved      { shasum: 'de2402f67fe73b5768b73598860fc04a77346e94',
+47 silly resolved        tarball: 'http://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz' },
+47 silly resolved     directories: {},
+47 silly resolved     _resolved: 'https://registry.npmjs.org/gitbook-cli/-/gitbook-cli-0.3.2.tgz' } ]
+48 info install gitbook-cli@0.3.2 into /usr/lib
+49 info installOne gitbook-cli@0.3.2
+50 verbose lib/node_modules/gitbook-cli unbuild
+51 verbose tar unpack /home/out/.npm/gitbook-cli/0.3.2/package.tgz
+52 silly lockFile 9de9db28-usr-lib-node-modules-gitbook-cli tar:///usr/lib/node_modules/gitbook-cli
+53 verbose lock tar:///usr/lib/node_modules/gitbook-cli /home/out/.npm/9de9db28-usr-lib-node-modules-gitbook-cli.lock
+54 silly lockFile dee3aee5-pm-gitbook-cli-0-3-2-package-tgz tar:///home/out/.npm/gitbook-cli/0.3.2/package.tgz
+55 verbose lock tar:///home/out/.npm/gitbook-cli/0.3.2/package.tgz /home/out/.npm/dee3aee5-pm-gitbook-cli-0-3-2-package-tgz.lock
+56 silly gunzTarPerm modes [ '755', '644' ]
+57 error Error: EACCES, mkdir '/usr/lib/node_modules/gitbook-cli'
+57 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/gitbook-cli']
+57 error   errno: 3,
+57 error   code: 'EACCES',
+57 error   path: '/usr/lib/node_modules/gitbook-cli',
+57 error   fstream_type: 'Directory',
+57 error   fstream_path: '/usr/lib/node_modules/gitbook-cli',
+57 error   fstream_class: 'DirWriter',
+57 error   fstream_stack:
+57 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+57 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+57 error      'Object.oncomplete (fs.js:108:15)' ] }
+58 error Please try running this command again as root/Administrator.
+59 error System Linux 3.16.0-4-amd64
+60 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "gitbook-cli"
+61 error cwd /mnt/share/jiebaRmd
+62 error node -v v0.10.36
+63 error npm -v 1.4.28
+64 error path /usr/lib/node_modules/gitbook-cli
+65 error fstream_path /usr/lib/node_modules/gitbook-cli
+66 error fstream_type Directory
+67 error fstream_class DirWriter
+68 error code EACCES
+69 error errno 3
+70 error stack Error: EACCES, mkdir '/usr/lib/node_modules/gitbook-cli'
+71 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+71 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+71 error fstream_stack Object.oncomplete (fs.js:108:15)
+72 verbose exit [ 3, true ]
