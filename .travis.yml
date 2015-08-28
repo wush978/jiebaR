@@ -6,6 +6,10 @@
 
 language: c
 
+os:
+  - linux
+  - osx
+  
 env:
   global:
     - PKG_CFLAGS="-I../inst/include -DLOGGER_LEVEL=LL_WARN"
