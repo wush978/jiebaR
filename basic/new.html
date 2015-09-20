@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="1.1" data-basepath=".." data-revision="Sun Sep 20 2015 12:30:37 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="Sun Sep 20 2015 19:50:35 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -502,39 +502,7 @@
                     <section class="normal" id="section-">
                     
                         <h2 id="github-v0-5-1">GitHub v0.5.1</h2>
-<p>&#x4E00;&#x3001;&#x589E;&#x5F3A;&#xFF1A;<code>filter_segment()</code> &#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x4EE5;&#x6587;&#x672C;&#x5411;&#x91CF;&#x4E3A;&#x5185;&#x5BB9;&#x7684; list&#x3002;</p>
-<pre><code class="lang-r">cutter = worker()
-result_segment = list(    cutter[<span class="hljs-string">&quot;&#x6211;&#x662F;&#x6D4B;&#x8BD5;&#x6587;&#x672C;&#xFF0C;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x8FC7;&#x6EE4;&#x5206;&#x8BCD;&#x6548;&#x679C;&#x3002;&quot;</span>], 
-                      cutter[<span class="hljs-string">&quot;&#x6211;&#x662F;&#x6D4B;&#x8BD5;&#x6587;&#x672C;&#xFF0C;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x8FC7;&#x6EE4;&#x5206;&#x8BCD;&#x6548;&#x679C;&#x3002;&quot;</span>])
-result_segment
-filter_words  = c(<span class="hljs-string">&quot;&#x6211;&quot;</span>,<span class="hljs-string">&quot;&#x4F60;&quot;</span>,<span class="hljs-string">&quot;&#x5B83;&quot;</span>,<span class="hljs-string">&quot;&#x5927;&#x5BB6;&quot;</span>)
-filter_segment(result_segment,filter_words)
-</code></pre>
-<p>&#x4E8C;&#x3001;&#x4FEE;&#x590D; &#xFF1A;<code>filter_segment()</code> &#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x5220;&#x9664;&#x975E;&#x505C;&#x6B62;&#x8BCD;&#x3002;</p>
-<p>&#x4E09;&#x3001;&#x589E;&#x52A0;&#xFF1A;<code>filter_segment()</code> &#x589E;&#x52A0;<code>unit</code> &#x9009;&#x9879;&#x3002;</p>
-<p>&#x5904;&#x7406;&#x6587;&#x672C;&#x65F6;&#xFF0C;&#x505C;&#x6B62;&#x8BCD;&#x6570;&#x91CF;&#x8F83;&#x591A;&#x65F6; &#xFF0C;&#x751F;&#x6210;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8D85;&#x8FC7; 265 bytes &#xFF0C;R &#x53EF;&#x80FD;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x901A;&#x8FC7; <code>unit</code> &#x9009;&#x9879;&#x53EF;&#x4EE5;&#x5BF9;&#x4E8E;&#x8F83;&#x591A;&#x7684;&#x505C;&#x6B62;&#x8BCD;&#x5206;&#x591A;&#x6B21;&#x5904;&#x7406;&#xFF0C;&#x63A7;&#x5236;&#x6BCF;&#x6B21;&#x8BC6;&#x522B;&#x7684;&#x505C;&#x6B62;&#x8BCD;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x751F;&#x6210;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x957F;&#x5EA6;&#x3002;<code>unit</code> &#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 50&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539; unit &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
-<pre><code class="lang-r">help(regex)
-
-Long regular expressions may or may not be accepted: the POSIX standard only requires up to <span class="hljs-number">256</span> bytes.
-
-filter_segment(result_segment,filter_words) <span class="hljs-comment"># &#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;</span>
-
-filter_segment(result_segment,filter_words, unit=<span class="hljs-number">10</span>) <span class="hljs-comment"># &#x5982;&#x679C;&#x4F60;&#x6709;&#x8F83;&#x591A;&#x6587;&#x672C;&#x957F;&#x5EA6;&#x5F88;&#x957F;&#x7684;&#x505C;&#x6B62;&#x8BCD;&#x8BCD;&#x6761;</span>
-</code></pre>
-<p>&#x56DB;&#x3001;&#x589E;&#x5F3A;&#xFF1A;&#x5206;&#x8BCD;&#x65F6;&#xFF0C;<code>symbol = FALSE</code> &#x65F6;&#xFF0C;<code>2010-10-12</code>&#xFF0C;<code>20.2</code> &#x7C7B;&#x4F3C;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x7B26;&#x53F7;&#x4F1A;&#x88AB;&#x4FDD;&#x7559;&#x3002;&#x5355;&#x7EAF;&#x7684;&#x7B26;&#x53F7;&#x5C06;&#x4F1A;&#x88AB;&#x8FC7;&#x6EE4;&#x3002;</p>
-<pre><code class="lang-r">cutter = worker()
-cutter$symbol = <span class="hljs-literal">F</span>
-cutter[<span class="hljs-string">&quot;2010-10-10&quot;</span>]
-</code></pre>
-<p>&#x4E94;&#x3001;&#x589E;&#x52A0;&#xFF1A; C API&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6; R &#x5305;&#x8C03;&#x7528;&#x672C;&#x5305;&#x7684; C &#x63A5;&#x53E3;&#x3002;</p>
-<pre><code class="lang-cpp"><span class="hljs-comment">// inst/include/jiebaRAPI.h</span>
-<span class="hljs-function">SEXP <span class="hljs-title">jiebaR_filecoding</span><span class="hljs-params">(SEXP fileSEXP)</span></span>;
-
-<span class="hljs-function">SEXP <span class="hljs-title">jiebaR_mp_ptr</span><span class="hljs-params">(SEXP dictSEXP, SEXP userSEXP)</span></span>; 
-
-....
-</code></pre>
-<p>&#x516D;&#x3001;&#x589E;&#x5F3A;&#xFF1A;&#x5206;&#x8BCD;&#x65F6;&#x589E;&#x52A0;&#x8FC7;&#x6EE4;&#x505C;&#x6B62;&#x8BCD;&#x529F;&#x80FD;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; <code>STOPPATH</code> &#x8DEF;&#x5F84;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x5176;&#x4ED6;&#x8DEF;&#x5F84;&#xFF0C;&#x505C;&#x6B62;&#x8BCD;&#x624D;&#x80FD;&#x5728;&#x5206;&#x8BCD;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
+<p>&#x4E00;&#x3001;&#x589E;&#x5F3A;&#xFF1A;&#x5206;&#x8BCD;&#x3001;&#x8BCD;&#x6027;&#x6807;&#x6CE8;&#x65F6;&#xFF0C;&#x589E;&#x52A0;&#x8FC7;&#x6EE4;&#x505C;&#x6B62;&#x8BCD;&#x529F;&#x80FD;&#xFF0C;&#x9ED8;&#x8BA4;&#x7684; <code>STOPPATH</code> &#x8DEF;&#x5F84;&#x5C06;&#x4E0D;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#xFF0C;&#x4E0D;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x505C;&#x6B62;&#x8BCD;&#x5E93;&#x3002;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x5176;&#x4ED6;&#x8DEF;&#x5F84;&#xFF0C;&#x505C;&#x6B62;&#x8BCD;&#x624D;&#x80FD;&#x5728;&#x5206;&#x8BCD;&#x65F6;&#x4F7F;&#x7528;&#x3002;&#x505C;&#x6B62;&#x8BCD;&#x5E93;&#x7684;&#x7F16;&#x7801;&#x9700;&#x8981;&#x4E3A; UTF-8 &#x683C;&#x5F0F;&#xFF0C;&#x5426;&#x5219;&#x8BFB;&#x5165;&#x7684;&#x6570;&#x636E;&#x53EF;&#x80FD;&#x4E3A;&#x4E71;&#x7801;&#x3002;</p>
 <pre><code class="lang-r">cutter = worker()
 cutter
 <span class="hljs-comment"># Worker Type:  Mix Segment</span>
@@ -543,9 +511,6 @@ cutter
 <span class="hljs-comment"># ...</span>
 
 <span class="hljs-comment"># $stop_word</span>
-<span class="hljs-comment"># NULL</span>
-
-<span class="hljs-comment"># $loaded_stop_words</span>
 <span class="hljs-comment"># NULL</span>
 
 <span class="hljs-comment"># $timestamp</span>
@@ -563,13 +528,42 @@ cutter
 <span class="hljs-comment"># $stop_word</span>
 <span class="hljs-comment"># [1] &quot;../stop.txt&quot;</span>
 
-<span class="hljs-comment"># $loaded_stop_words</span>
-<span class="hljs-comment"># [1] &#x6211;, &#x4F60;, &#x4ED6;, &#x6EE1;&#x610F;, &#x3002;, ...</span>
-
 <span class="hljs-comment"># $timestamp</span>
 <span class="hljs-comment"># [1] 1442716020</span>
 
 <span class="hljs-comment"># $detect $encoding $symbol $output $write $lines $bylines can be reset.</span>
+</code></pre>
+<p>&#x4E8C;&#x3001;&#x589E;&#x5F3A;&#xFF1A;&#x5206;&#x8BCD;&#x65F6;&#xFF0C;<code>symbol = FALSE</code> &#x65F6;&#xFF0C;<code>2010-10-12</code>&#xFF0C;<code>20.2</code> &#x7C7B;&#x4F3C;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x672C;&#x4E2D;&#x7684;&#x7B26;&#x53F7;&#x4F1A;&#x88AB;&#x4FDD;&#x7559;&#x3002;&#x5355;&#x7EAF;&#x7684;&#x7B26;&#x53F7;&#x5C06;&#x4F1A;&#x88AB;&#x8FC7;&#x6EE4;&#x3002;</p>
+<pre><code class="lang-r">cutter = worker()
+cutter$symbol = <span class="hljs-literal">F</span>
+cutter[<span class="hljs-string">&quot;2010-10-10&quot;</span>]
+</code></pre>
+<p>&#x4E09;&#x3001;&#x589E;&#x52A0;&#xFF1A; C API&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5176;&#x4ED6; R &#x5305;&#x8C03;&#x7528;&#x672C;&#x5305;&#x7684; C &#x63A5;&#x53E3;&#x3002;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// inst/include/jiebaRAPI.h</span>
+<span class="hljs-function">SEXP <span class="hljs-title">jiebaR_filecoding</span><span class="hljs-params">(SEXP fileSEXP)</span></span>;
+
+<span class="hljs-function">SEXP <span class="hljs-title">jiebaR_mp_ptr</span><span class="hljs-params">(SEXP dictSEXP, SEXP userSEXP)</span></span>; 
+
+....
+</code></pre>
+<p>&#x56DB;&#x3001;&#x589E;&#x5F3A;&#xFF1A;<code>filter_segment()</code> &#x73B0;&#x5728;&#x53EF;&#x4EE5;&#x8F93;&#x5165;&#x4EE5;&#x6587;&#x672C;&#x5411;&#x91CF;&#x4E3A;&#x5185;&#x5BB9;&#x7684; list&#x3002;</p>
+<pre><code class="lang-r">cutter = worker()
+result_segment = list(    cutter[<span class="hljs-string">&quot;&#x6211;&#x662F;&#x6D4B;&#x8BD5;&#x6587;&#x672C;&#xFF0C;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x8FC7;&#x6EE4;&#x5206;&#x8BCD;&#x6548;&#x679C;&#x3002;&quot;</span>], 
+                      cutter[<span class="hljs-string">&quot;&#x6211;&#x662F;&#x6D4B;&#x8BD5;&#x6587;&#x672C;&#xFF0C;&#x7528;&#x4E8E;&#x6D4B;&#x8BD5;&#x8FC7;&#x6EE4;&#x5206;&#x8BCD;&#x6548;&#x679C;&#x3002;&quot;</span>])
+result_segment
+filter_words  = c(<span class="hljs-string">&quot;&#x6211;&quot;</span>,<span class="hljs-string">&quot;&#x4F60;&quot;</span>,<span class="hljs-string">&quot;&#x5B83;&quot;</span>,<span class="hljs-string">&quot;&#x5927;&#x5BB6;&quot;</span>)
+filter_segment(result_segment,filter_words)
+</code></pre>
+<p>&#x4E94;&#x3001;&#x4FEE;&#x590D; &#xFF1A;<code>filter_segment()</code> &#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;&#x5220;&#x9664;&#x975E;&#x505C;&#x6B62;&#x8BCD;&#x3002;</p>
+<p>&#x516D;&#x3001;&#x589E;&#x52A0;&#xFF1A;<code>filter_segment()</code> &#x589E;&#x52A0;<code>unit</code> &#x9009;&#x9879;&#x3002;</p>
+<p>&#x5904;&#x7406;&#x6587;&#x672C;&#x65F6;&#xFF0C;&#x505C;&#x6B62;&#x8BCD;&#x6570;&#x91CF;&#x8F83;&#x591A;&#x65F6; &#xFF0C;&#x751F;&#x6210;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8D85;&#x8FC7; 265 bytes &#xFF0C;R &#x53EF;&#x80FD;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x901A;&#x8FC7; <code>unit</code> &#x9009;&#x9879;&#x53EF;&#x4EE5;&#x5BF9;&#x4E8E;&#x8F83;&#x591A;&#x7684;&#x505C;&#x6B62;&#x8BCD;&#x5206;&#x591A;&#x6B21;&#x5904;&#x7406;&#xFF0C;&#x63A7;&#x5236;&#x6BCF;&#x6B21;&#x8BC6;&#x522B;&#x7684;&#x505C;&#x6B62;&#x8BCD;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x63A7;&#x5236;&#x751F;&#x6210;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x957F;&#x5EA6;&#x3002;<code>unit</code> &#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 50&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539; unit &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<pre><code class="lang-r">help(regex)
+
+Long regular expressions may or may not be accepted: the POSIX standard only requires up to <span class="hljs-number">256</span> bytes.
+
+filter_segment(result_segment,filter_words) <span class="hljs-comment"># &#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x3002;</span>
+
+filter_segment(result_segment,filter_words, unit=<span class="hljs-number">10</span>) <span class="hljs-comment"># &#x5982;&#x679C;&#x4F60;&#x6709;&#x8F83;&#x591A;&#x6587;&#x672C;&#x957F;&#x5EA6;&#x5F88;&#x957F;&#x7684;&#x505C;&#x6B62;&#x8BCD;&#x8BCD;&#x6761;</span>
 </code></pre>
 <h2 id="github-v0-4-2">GitHub v0.4.2</h2>
 <p>&#x4E00;&#x3001; &#x589E;&#x52A0;&#xFF1A;&#x8FC7;&#x6EE4;&#x5206;&#x8BCD;&#x7ED3;&#x679C;&#x7684;&#x65B9;&#x6CD5; <code>filter_segment()</code>&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x5173;&#x952E;&#x8BCD;&#x63D0;&#x53D6;&#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x505C;&#x6B62;&#x8BCD;&#x529F;&#x80FD;&#x3002;</p>
@@ -672,6 +666,10 @@ cutter[<span class="hljs-string">&quot;./test.txt&quot;</span>] <span class="hlj
 
     
     <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
     
 
 <script>
