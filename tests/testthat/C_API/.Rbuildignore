@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^packrat/
+^\.travis\.yml$
+^\.dat$
+^.*\.txt$
+^.*\.dat$
+^appveyor\.yml$
+tests/testthat/test-bylines\.R
