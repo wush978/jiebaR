@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>系统词典 | jiebaR 中文分词  </title>
+        <title>新版特性 v0.7 | jiebaR 中文分词  </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -25,10 +25,10 @@
         
     
     
-    <link rel="next" href="../dict/user.html" />
+    <link rel="next" href="../quick/index.html" />
     
     
-    <link rel="prev" href="../dict/init.html" />
+    <link rel="prev" href="../basic/new.html" />
     
 
         
@@ -36,7 +36,7 @@
     <body>
         
         
-    <div class="book" data-level="3.2" data-basepath=".." data-revision="Tue Nov 03 2015 17:34:12 GMT+0800 (中国标准时间)">
+    <div class="book" data-level="1.3" data-basepath=".." data-revision="Tue Nov 03 2015 17:34:12 GMT+0800 (中国标准时间)">
     
 
 <div class="book-summary">
@@ -112,7 +112,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" data-path="basic/new-0.7.html">
+        <li class="chapter active" data-level="1.3" data-path="basic/new-0.7.html">
             
                 
                     <a href="../basic/new-0.7.html">
@@ -259,7 +259,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.2" data-path="dict/dict.html">
+        <li class="chapter " data-level="3.2" data-path="dict/dict.html">
             
                 
                     <a href="../dict/dict.html">
@@ -531,25 +531,27 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="%E7%B3%BB%E7%BB%9F%E8%AF%8D%E5%85%B8">&#x7CFB;&#x7EDF;&#x8BCD;&#x5178;</h2>
-<p>&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5730;&#x5EFA;&#x7ACB;&#x5206;&#x8BCD;&#x5668;&#xFF1A;</p>
-<pre><code class="lang-r">worker( dict=<span class="hljs-string">&quot;&#x7CFB;&#x7EDF;&#x8BCD;&#x5178;&#xFF0C;&#x5148;&#x52A0;&#x8F7D;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x8BCD;&#x9891;&quot;</span>, 
-        user=<span class="hljs-string">&quot;&#x7528;&#x6237;&#x8BCD;&#x5178;&#xFF0C;&#x7CFB;&#x7EDF;&#x8BCD;&#x5178;&#x52A0;&#x8F7D;&#x540E;&#x52A0;&#x8F7D;&#xFF0C;&#x6240;&#x6709;&#x8BCD;&#x7684;&#x8BCD;&#x9891;&#x4E3A;&#x7CFB;&#x7EDF;&#x8BCD;&#x5178;&#x7684;&#x6700;&#x5927;&#x8BCD;&#x9891;&quot;</span>)
+                        <h2 id="github-v0-7">GitHub v0.7</h2>
+<p>&#x4E00;&#x3001;&#x589E;&#x52A0;&#xFF1A;get_tuple() &#x8FD4;&#x56DE;&#x5206;&#x8BCD;&#x7ED3;&#x679C;&#x4E2D; n &#x4E2A;&#x8FDE;&#x7EED;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7EC4;&#x5408;&#x7684;&#x9891;&#x7387;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x81EA;&#x5B9A;&#x4E49;&#x8BCD;&#x5178;&#x7684;&#x53C2;&#x8003;&#x3002;</p>
+<pre><code class="lang-r">get_tuple(c(<span class="hljs-string">&quot;sd&quot;</span>,<span class="hljs-string">&quot;sd&quot;</span>,<span class="hljs-string">&quot;sd&quot;</span>,<span class="hljs-string">&quot;rd&quot;</span>),size=<span class="hljs-number">3</span>)
+<span class="hljs-comment">#     name count</span>
+<span class="hljs-comment"># 4   sdsd     2</span>
+<span class="hljs-comment"># 1   sdrd     1</span>
+<span class="hljs-comment"># 2 sdsdrd     1</span>
+<span class="hljs-comment"># 3 sdsdsd     1</span>
+get_tuple(list(
+        c(<span class="hljs-string">&quot;sd&quot;</span>,<span class="hljs-string">&quot;sd&quot;</span>,<span class="hljs-string">&quot;sd&quot;</span>,<span class="hljs-string">&quot;rd&quot;</span>),
+        c(<span class="hljs-string">&quot;&#x65B0;&#x6D6A;&quot;</span>,<span class="hljs-string">&quot;&#x5FAE;&#x535A;&quot;</span>,<span class="hljs-string">&quot;sd&quot;</span>,<span class="hljs-string">&quot;rd&quot;</span>),
+    ), size = <span class="hljs-number">2</span>)
+<span class="hljs-comment">#       name count</span>
+<span class="hljs-comment"># 2     sdrd     2</span>
+<span class="hljs-comment"># 3     sdsd     2</span>
+<span class="hljs-comment"># 1   &#x5FAE;&#x535A;sd     1</span>
+<span class="hljs-comment"># 4 &#x65B0;&#x6D6A;&#x5FAE;&#x535A;     1</span>
 </code></pre>
-<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x8BCD;&#xFF0C;&#x76F4;&#x63A5;&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C;&#xFF0C;&#x7136;&#x540E;&#x4E00;&#x884C;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x8BCD;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x8F93;&#x5165;&#x5B8C;&#x4EE5;&#x540E;&#xFF0C;user=&#x201D;&#x521A;&#x624D;&#x8BBE;&#x7F6E;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x201D;&#xFF0C;</p>
-<p>&#x7528;&#x6237;&#x8BCD;&#x5178;&#x4E0D;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x8BCD;&#x9891;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#xFF0C;&#x7528;&#x6237;&#x4E5F;&#x4E0D;&#x592A;&#x6E05;&#x695A;&#x4E00;&#x4E2A;&#x8BCD;&#x7684;&#x8BCD;&#x9891;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x4F46;&#x662F;&#x52A0;&#x5165;&#x7528;&#x6237;&#x8BCD;&#x5178;&#x7684;&#x8BCD;&#xFF0C;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x8981;&#x5207;&#x5206;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x9ED8;&#x8BA4;&#x8BBE;&#x7F6E;&#x6700;&#x5927;&#x8BCD;&#x9891;&#xFF0C;&#x4FDD;&#x8BC1;&#x8FD9;&#x4E2A;&#x8BCD;&#x80FD;&#x591F;&#x6700;&#x5927;&#x7A0B;&#x5EA6;&#x5730;&#x88AB;&#x5207;&#x51FA;&#x6765;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x8BBE;&#x7F6E;&#x8BCD;&#x9891;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x8BCD;&#x52A0;&#x5165;&#x5230;&#x7CFB;&#x7EDF;&#x8BCD;&#x5178;&#x91CC;&#x3002;</p>
-<p>&#x6BD4;&#x5982;user&#x8BCD;&#x5E93;&#xFF0C;&#x5728; <code>C:/user.txt</code> &#xFF1A;</p>
-<pre><code class="lang-r">&#x5317;&#x4EAC;&#x5927;&#x5B66;
-&#x6E05;&#x534E;&#x5927;&#x5B66;
+<p>&#x4E00;&#x3001;&#x589E;&#x52A0;&#xFF1A;get_idf() &#x6839;&#x636E;&#x591A;&#x6587;&#x6863;&#x8BCD;&#x6761;&#x7ED3;&#x679C;&#x8BA1;&#x7B97; IDF &#x503C;&#x3002;&#x8F93;&#x5165;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x6587;&#x672C;&#x5411;&#x91CF;&#x7684; list,&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x672C;&#x5411;&#x91CF;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#xFF0C;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x505C;&#x6B62;&#x8BCD;&#x5217;&#x8868;&#x3002; </p>
+<pre><code class="lang-r">get_idf(a_big_list,<span class="hljs-keyword">stop</span>=<span class="hljs-string">&quot;&#x505C;&#x6B62;&#x8BCD;&#x5217;&#x8868;&quot;</span>,path=<span class="hljs-string">&quot;&#x8F93;&#x51FA;IDF&#x76EE;&#x5F55;&quot;</span>)
 </code></pre>
-<p>&#x65B0;&#x5EFA;&#x5206;&#x8BCD;&#x5668; <code>cutter1 = worker(user = &#x201C;C:/user.txt&#x201D;)</code>&#xFF0C;</p>
-<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x518D;&#x52A0;&#x5165;&#x51E0;&#x4E2A;&#x5927;&#x5B66;&#xFF0C;&#x6253;&#x5F00;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#xFF1A;</p>
-<pre><code class="lang-r">&#x5317;&#x4EAC;&#x5927;&#x5B66;
-&#x6E05;&#x534E;&#x5927;&#x5B66;
-&#x6D59;&#x6C5F;&#x5927;&#x5B66;
-</code></pre>
-<p>&#x65B0;&#x5EFA;&#x5206;&#x8BCD;&#x5668; <code>cutter2 = worker(user = &#x201C;C:/user.txt&#x201D;)</code>&#xFF0C;</p>
-<p>&#x8FD9;&#x6837;&#xFF0C;R &#x7CFB;&#x7EDF;&#x91CC;&#x5C31;&#x6709;&#x4E24;&#x4E2A;&#x5206;&#x8BCD;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x52A8;&#x6001;&#x5730;&#x8C03;&#x7528;&#x4F60;&#x60F3;&#x7528;&#x7684;&#xFF0C;&#x5BF9;&#x6BD4;&#x4E0D;&#x540C;&#x5206;&#x8BCD;&#x5668;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
 
                     
                     </section>
@@ -560,10 +562,10 @@
         </div>
 
         
-        <a href="../dict/init.html" class="navigation navigation-prev " aria-label="Previous page: 词典设置"><i class="fa fa-angle-left"></i></a>
+        <a href="../basic/new.html" class="navigation navigation-prev " aria-label="Previous page: 新版特性 v0.4-v0.6"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../dict/user.html" class="navigation navigation-next " aria-label="Next page: 用户词典"><i class="fa fa-angle-right"></i></a>
+        <a href="../quick/index.html" class="navigation navigation-next " aria-label="Next page: 快速指南"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
